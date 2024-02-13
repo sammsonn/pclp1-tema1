@@ -1,0 +1,149 @@
+Nume: Samson Alexandru-Valentin
+Grupă: 312CC
+
+
+Tema 1
+
+Descriere:
+
+
+Problema 1
+
+Timp: 1 oră
+
+Explicație: Pentru această problemă am folosit 2 funcții, prima verifică
+dacă prizonierii câștigă jocul, iar a doua afișează toate ciclurile
+formate de cutii.
+
+În prima funcție am luat pe rând fiecare prizonier și am verificat dacă
+reușește să gasească numărul său în p/2 pași, iar dacă unul dintre
+ei nu reușea, se afișa mesajul "Nu", altfel se afișa mesajul "Da".
+
+În a doua funcție am luat pe rând fiecare cutie și am continuat cu acea
+cutie cu numărul găsit în cutia anterioară, până când se ajungea la
+cutia ce conținea numărul inițial și se afișa ciclul format.
+
+În funcția main se citesc datele de intrare și se apelează cele două
+funcții în ordine.
+
+
+Problema 2
+
+Timp: 7 ore
+
+Explicație: Pentru această problemă am folosit 5 funcții, prima compară
+două șiruri, a doua adună două părți, a treia scade două părți, a
+patra adună două numere complexe, iar a cincea scade două numere complexe.
+
+Funcția de comparație interschimbă șirurile astfel încât primul să fie
+cel mare și returnează 1 sau 2 în funcție de care era mai mare inițial.
+
+Funcția de adunare între părți parcurge șirul de la coadă la cap,
+adunând cifrele pe rând, iar daca suma lor trece de 10 se va adăuga 1 la
+suma cifrelor de pe următoarea poziție. Dacă în urma adunării partea
+nu mai încape în lungimea alocată ei, nu se ține cont de prima cifră
+care nu încape.
+
+Funcția de scădere între părți parcurge șirul de la coadă la cap,
+scăzând cifrele pe rând, iar daca diferența lor este negativă se va
+scădea 1 la diferența cifrelor de pe următoarea poziție. Dacă în urma
+scăderii partea nu mai încape în lungimea alocată ei, nu se ține cont
+de prima cifră care nu încape.
+
+În funcțiile de adunare și scădere am impărțit numerele complexe
+în partea reală și imaginară, memorând semnele acestora. Apoi în
+funcție de semnele părților de același fel de la cele două numere, am
+realizat adunarea sau scăderea celor doua părți și am modificat semnul,
+dacă era cazul. De exemplu, pentru a aduna două numere negative facem
+suma modulelor și păstrăm semnul primului termen, iar pentru a scădea
+două numere de semn opus facem același lucru. Dupa modificarea fiecărei
+părți și a semnului ei, se concatenau la șirul nou. La final se afișa
+numărul nou obținut în urma adunării sau scăderii.
+
+În funcția main se citesc datele de intrare și se apelează la fiecare
+pas funcția corespunzătoare până la citirea lui 0.
+
+
+Problema 3
+
+Timp: 8 ore
+
+Explicație: Pentru această problemă am folosit 4 funcții, prima pentru
+codificarea A, a doua pentru codificarea B, a treia pentru decodificarea
+A și a patra pentru decodificarea B.
+
+Funcția de codificare A formează o matrice cu numărul de coloane egal
+cu lungimea cheii, apoi introduce textul ce trebuie codificat pe linii,
+iar dacă rămân elemente necompletate vor fi completate cu spații. După
+care sortează lexicografic cheia, memorând și ordinea nouă a literelor
+în funcție de ordinea lor veche. Apoi se parcurge matricea pe coloane
+dupa ordinea nouă și se alipesc literele la textul nou codificat, după
+care este afișat.
+
+Funcția de codificare B permută circular la dreapta șirul de câte
+ori indică cheia, apoi adună cheia la literele permutate dacă nu sunt
+spații, astfel încât să rămână în raza de coduri ASCII a caracterelor
+alfabetului, după care este afișat textul codificat.
+
+Funcția de decodificare A formează o matrice cu numărul de linii egal
+cu lungimea cheii, apoi introduce cheia în matrice pe linii cu textul
+ce trebuie decodificat, iar dacă mai rămân elemente de completat în
+matrice se vor completa cu spații. Apoi este sortată lexicografic cheia,
+memorându-se și ordinea nouă a literelor în funcție de ordinea veche. Dar
+mai trebuie format un vector pentru a vedea în ce ordine trebuie alipite
+elementele de pe fiecare coloană astfel încât să se ajungă la textul
+decodificat. De exemplu, dacă ordinea literelor în cheia sortată este 1
+3 5 4 0 2, va trebui pe fiecare coloană să se ia literele de pe linii în
+ordinea indicilor de la vectorul ce conține ordinea literelor cheii sortate,
+în cazul acesta 4 0 5 1 3 2 (indicele 4 conține pe 0, indicele 0 conține pe
+1, indicele 5 conține pe 2 etc.). În final se afișează textul decodificat.
+
+Funcția de decodificare B scade cheia din literele permutate dacă nu sunt
+spații, astfel încât să rămână în raza de coduri ASCII a caracterelor
+alfabetului, apoi permută circular la stânga șirul de câte ori indică
+cheia, după care este afișat textul decodificat.
+
+În funcția main se citesc datele de intrare și se apeleză la fiecare
+pas funcția corespunzătoare codificării sau decodificării, până la
+citirea lui STOP.
+
+
+Problema 4
+
+Timp: 6 ore
+
+Explicație: Pentru această problemă am folosit 6 funcții, prima pentru
+citirea brand-urilor, a doua pentru citirea numerelor de înmatriculare,
+a treia pentru citirea combustibililor, a patra pentru cerința a, a cincea
+pentru cerința b și a șasea pentru cerința c.
+
+Primele trei funcții citesc și introduc șirurile citite într-o matrice
+corespunzătoare.
+
+Funcția pentru cerința a parcurge matricea de combustibili și calculează
+câte mașini sunt pentru fiecare tip de combustibil.
+
+Funcția pentru cerința b formează mai întâi o matrice în care fiecare
+brand din matricea brand-urilor mașinilor apare o singură dată. Apoi
+parcurge matricea de brand-uri, iar pentru fiecare mașină de un anumit
+brand, adaugă la consumul total al brand-ului unic respectiv consumul
+mașinii și costul de deplasare al acesteia, în funcție de ce combustibil
+folosește. În final funcția returnează numărul de brand-uri unice ce
+s-au găsit în matricea de brand-uri.
+
+Funcția pentru cerința c parcurge matricea de numere de înmatriculare și
+verifică dacă numărul este corect în funcție de lungimea acestuia și
+dacă respectă formatul impus de lungime, de exemplu un număr de lungime
+6 poate fi numai de forma A12ABC, în timp ce un număr de lungime 7 poate
+fi de forma A123ABC sau AB12ABC.
+
+În funcția main se citesc datele de intrare și, în funcție de cerință,
+se apelează funcția necesară și se afișeză corespunzător.
+
+
+Comentarii:
+
+În general cred că aș fi putut realiza o implementare mai bună a temei,
+dar timpul limitat m-a făcut să păstrez prima idee care mi-a venit și a
+funcționat. Din realizarea temei pot spune că am învățat cum să folosesc
+pointeri și alocarea dinamică mai bine.
